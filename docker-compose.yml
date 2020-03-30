@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  phpapache:
+    build:
+      context: './php/'
+    container_name: phpapache
+    depends_on:
+      - mysql
+    ports:
+      - 8080:80
+    volumes:
+      - ./public_html:/var/www/html
+  mysql:
+    image: mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "test"
+      MYSQL_DATABASE: "test"
+      MYSQL_USER: "test"
+      MYSQL_PASSWORD: "test"
+    container_name: mysql
