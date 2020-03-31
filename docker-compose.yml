@@ -12,7 +12,6 @@ services:
       - ./public_html:/var/www/html
   mysql:
     image: mysql
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: database
