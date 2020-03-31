@@ -2,8 +2,8 @@
 <h4>Attempting MySQL connection from php...</h4>
 <?php
 $host = 'mysql';
-$user = 'test';
-$pass = 'test';
+$user = 'user';
+$pass = 'password';
 $conn = new mysqli($host, $user, $pass);
 
 if ($conn->connect_error) {
